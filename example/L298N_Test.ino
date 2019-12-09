@@ -6,8 +6,8 @@
 L298N Hbridge(2,4,5,7,3,6);		//input pin	order(en1,en2,en3,en4,enA,enB)
 
 unsigned long wait_time = 0;
-int m_speed[2]={0};				//memory store the last change speed
-int m_direction = 0;			//memory store the last change direction
+byte m_speed[2]={0};				//memory store the last change speed
+byte m_direction = 0;			//memory store the last change direction
 
 void setup() {
   Serial.begin(9600);										//To initiate Serial communication
