@@ -15,15 +15,15 @@ class L298N{
      * en4           Motor B input pin 2    *
      * enB           Motor B enable pin     * 
      ****************************************/
-    L298N(int en1, int en2, int en3, int en4, int enA, int enB);
+    L298N(byte en1, byte en2, byte en3, byte en4, byte enA, byte enB);
 
     /********************************************************
      * Function to directly communicate with L298N driver   *
      ********************************************************/
-    void drive_motor(int direction, int speed[]);
+    void drive_motor(byte direction, byte speed[]);
 
  private:
-    int _en[6] ;
+    byte _en[6] ;
 };
 
 #endif
