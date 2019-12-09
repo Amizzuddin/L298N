@@ -3,7 +3,7 @@
 #include "Arduino.h"
 #include "L298N.h"
 
-L298N::L298N(int en1, int en2, int en3, int en4, int enA, int enB){
+L298N::L298N(byte en1, byte en2, byte en3, byte en4, byte enA, byte enB){
     //make it clear that the variables is private
 	_en[0]= en1;
 	_en[1]= en2;
@@ -13,13 +13,13 @@ L298N::L298N(int en1, int en2, int en3, int en4, int enA, int enB){
 	_en[5]= enB;
     
 	//Set the following pin as OUTPUT
-	for(register int i=0; i < 6; i++){
+	for(byte i=0; i < 6; i++){
 		pinMode(_en[i], OUTPUT);
 	}
 }
 
-void L298N::drive_motor(int direction, int speed[]){
-	for(int i=0; i < 6; i++){
+void L298N::drive_motor(byte direction, byte speed[]){
+	for(byte i=0; i < 6; i++){
 		if( i < 4){
 			digitalWrite(_en[i], direction & B0001);
 			direction = direction >> 1;
