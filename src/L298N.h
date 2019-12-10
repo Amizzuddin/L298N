@@ -10,10 +10,10 @@ class L298N{
     /****************************************
      * en1           Motor A input pin 1    *
      * en2           Motor A input pin 2    *
-     * enA           Motor A enable pin     *
+     * enA(PWM)      Motor A enable pin     *
      * en3           Motor B input pin 1    *
      * en4           Motor B input pin 2    *
-     * enB           Motor B enable pin     * 
+     * enB(PWM)      Motor B enable pin     * 
      ****************************************/
     L298N(byte en1, byte en2, byte en3, byte en4, byte enA, byte enB);
 
