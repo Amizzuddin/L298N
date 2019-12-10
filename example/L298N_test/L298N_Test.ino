@@ -6,8 +6,6 @@
 L298N Hbridge(2,4,5,7,3,6);		//input pin	order(en1,en2,en3,en4,enA,enB)
 
 unsigned long wait_time = 0;
-byte m_speed[2]={0};				//memory store the last change speed
-byte m_direction = 0;			//memory store the last change direction
 
 void setup() {
   Serial.begin(9600);										//To initiate Serial communication
@@ -19,6 +17,8 @@ void setup() {
 void loop() {
 	int motor=0;											//pointere to access m_speed elements
 	char c;													//A temp storage to read a single byte from rx buffer 
+	byte m_speed[2]={0};									//memory store the last change speed
+	byte m_direction = 0;									//memory store the last change direction
 	
 	do{
 		if(!Serial.available()){
@@ -122,9 +122,6 @@ void loop() {
 				Serial.write("vehicle will veer to the left");
 			}
 		}
-		Serial.write("\n");		
 	}
-	else{
-		Serial.write("\n");
-	}
+	Serial.write("\n\n");	
 }
